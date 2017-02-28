@@ -13,3 +13,14 @@ Once you clone after running a `make` it will compile the code and run the test 
 
 # Using for Arduino
 The code was written and tested on Unix. Then I simply take the headers from `fft.h` and code from `fft.c` and put into my Arduino project.
+
+# Performance
+
+A work in progress to make it faster and keep it simple.
+
+## Arduino DUE 32-Bit ARM at 84MHz
+1. FFT Size = 8   took 4.5ms
+2. FFT Size = 16  took 11.5ms
+3. FFT Size = 32  took 27.5ms
+4. FFT Size = 64  took 61.5ms
+5. FFT Size = 128 took 133.5ms
