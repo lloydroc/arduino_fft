@@ -14,6 +14,16 @@ int main(int argc, char **argv)
     clock_t start, stop;
     double cpu_time_used;
 
+  float data0_re[8] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
+  float expected0_re[8] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
+  float data0_im[8] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
+  float expected0_im[8] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
+  rearrange(data0_re, expected0_re, 8);
+  rearrange(data0_im, expected0_im, 8);
+	int tc0_re = compare_arrays(data0_re,expected0_re,8,0.01);
+	int tc0_im = compare_arrays(data0_re,expected0_re,8,0.01);
+	print_test_result(tc0_re,tc0_im,1);
+
 	// Test Case 1
 	float data1_re[8] = {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0};
 	float data1_im[8] = {7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0};

@@ -1,17 +1,23 @@
-#ifndef ARDUINO_FFT_INCLUDED
-#define ARDUINO_FFT_INCLUDED
+// file fft.h
+#ifndef EXAMPLE_FFT
+#define EXAMPLE_FFT
 
-// An FFT for the Arduino.
-// This was built on UNIX the C declarations
-// and C code in fft.c can be placed into
-// your Arduino project.
-//
 // The arrays for the fft will be computed in place
 // and thus your array will have the fft result
-// written over your original data
-void fft(float data_re[], float data_im[],const int N);
+// written over your original data.
+// We require an array of real and imaginary floats
+// where they are both of length N
+void
+fft(float data_re[], float data_im[],const int N);
+
 // helper functions called by the fft
 // data will first be rearranged then computed
-void rearrange(float data_re[],float data_im[],const unsigned int N);
-void compute(float data_re[],float data_im[],const unsigned int N);
+// an array of  {1, 2, 3, 4, 5, 6, 7, 8} will be
+// rarranged to {1, 5, 3, 7, 2, 6, 4, 8}
+void
+rearrange(float data_re[],float data_im[],const int N);
+
+void
+compute(float data_re[],float data_im[],const int N);
+
 #endif
